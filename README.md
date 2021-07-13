@@ -1,2 +1,7 @@
 # Random-Walk-Monte-Carlo
-Longest possible random walk where on average you will be less then N steps from the starting position
+
+Question:
+    
+    What is the longest random walk you can take
+    where on average you will be less then N steps
+    away from the starting position?
