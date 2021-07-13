@@ -2,7 +2,6 @@
 from random import choice
 
 
-
 def simulateWalk( distance ) -> int:
     ''' Returns "some" distance travelled from staring position '''
     movableDirections = { 'N':[ 0, 1 ], 'S':[ 0, -1 ], 'E':[ 1, 0 ], 'W':[ -1, 0 ] }
