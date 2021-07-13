@@ -16,7 +16,6 @@ def simulateWalk( distance ) -> int:
 
 
 
-
 def findLongestWalk( withinRange, maxWalkLength, cyclesPerWalk ) -> int:
 	longestWalk = None
 
