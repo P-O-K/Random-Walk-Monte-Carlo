@@ -5,12 +5,12 @@ from random import choice
 
 def simulateWalk( distance ) -> int:
     ''' Returns "some" distance travelled from staring position '''
-    moveDirection = { 'N':[ 0, 1 ], 'S':[ 0, -1 ], 'E':[ 1, 0 ], 'W':[ -1, 0 ] }
+    movableDirections = { 'N':[ 0, 1 ], 'S':[ 0, -1 ], 'E':[ 1, 0 ], 'W':[ -1, 0 ] }
     currentPosition = [ 0, 0 ]
 
     sumLists = lambda x,y: x+y
     for _ in range( distance ):
-        currentPosition = list( map( sumLists, currentPosition, moveDirection[ choice( 'NSEW' ) ] ) )
+        currentPosition = list( map( sumLists, currentPosition, movableDirections[ choice( 'NSEW' ) ] ) )
 
     return abs( currentPosition[ 0 ] ) +abs( currentPosition[ 1 ] )
 
