@@ -4,4 +4,4 @@ Question:
     
     What is the longest random walk you can take
     where on average you will be less then N steps
-    away from the starting position?
+    away from your starting position?
