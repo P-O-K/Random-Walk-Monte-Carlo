@@ -17,7 +17,7 @@ def simulateWalk( distance ) -> int:
 
 
 def findLongestWalk( withinRange, maxWalkLength, cyclesPerWalk ) -> int:
-	longestWalk = None
+	longestWalk, longestWalkPCT = None, None
 
 	for DST in range( withinRange, maxWalkLength ):
 	    walksWithinRange = 0
@@ -26,16 +26,16 @@ def findLongestWalk( withinRange, maxWalkLength, cyclesPerWalk ) -> int:
 	        if simulateWalk( DST ) <= withinRange: walksWithinRange +=1
 
 	    withinRangePCT = float( walksWithinRange ) / cyclesPerWalk
-	    if withinRangePCT >= 0.5: longestWalk = DST
+	    if withinRangePCT >= 0.5: longestWalk, longestWalkPCT = DST, withinRangePCT
 
 	    print( f'Walk length ({DST :0>2d}) -> ({withinRangePCT :.2%})' )
 	
-	return longestWalk
+	return longestWalk, longestWalkPCT
 
 
 
 if __name__ == '__main__':
-	L_Walk = findLongestWalk( withinRange=4, maxWalkLength=31, cyclesPerWalk=1000 )
+	L_Walk, PCT = findLongestWalk( withinRange=4, maxWalkLength=31, cyclesPerWalk=1000 )
 
 	print( '\nLongest walk where you will be (on average) less' )
-	print( 'then N steps from the starting position = {}'.format( L_Walk ) )
+	print( 'then N steps from the starting position = {} : {:.2%}'.format( L_Walk, PCT ) )
