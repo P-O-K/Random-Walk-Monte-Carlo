@@ -2,7 +2,7 @@
 from random import choice
 
 
-def simulateWalk( distance: int ) -> int:
+def simulateWalk( distance:int ) -> int:
     ''' Returns "some" distance travelled from staring position '''
     movableDirections = { 'N':[ 0, 1 ], 'S':[ 0, -1 ], 'E':[ 1, 0 ], 'W':[ -1, 0 ] }
     currentPosition = [ 0, 0 ]
@@ -15,7 +15,7 @@ def simulateWalk( distance: int ) -> int:
 
 
 
-def findLongestWalk( withinRange: int, maxWalkLength: int, cyclesPerWalk:int ) -> tuple( ( int, float ) ):
+def findLongestWalk( withinRange:int, maxWalkLength:int, cyclesPerWalk:int ) -> tuple( ( int, float ) ):
 	longestWalk, longestWalkPCT = None, None
 
 	for DST in range( withinRange, maxWalkLength ):
