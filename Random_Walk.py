@@ -2,7 +2,7 @@
 from random import choice
 
 
-def simulateWalk( distance ) -> int:
+def simulateWalk( distance: int ) -> int:
     ''' Returns "some" distance travelled from staring position '''
     movableDirections = { 'N':[ 0, 1 ], 'S':[ 0, -1 ], 'E':[ 1, 0 ], 'W':[ -1, 0 ] }
     currentPosition = [ 0, 0 ]
@@ -15,7 +15,7 @@ def simulateWalk( distance ) -> int:
 
 
 
-def findLongestWalk( withinRange, maxWalkLength, cyclesPerWalk ) -> int:
+def findLongestWalk( withinRange: int, maxWalkLength: int, cyclesPerWalk:int ) -> tuple( ( int, float ) ):
 	longestWalk, longestWalkPCT = None, None
 
 	for DST in range( withinRange, maxWalkLength ):
@@ -34,7 +34,8 @@ def findLongestWalk( withinRange, maxWalkLength, cyclesPerWalk ) -> int:
 
 
 if __name__ == '__main__':
-	L_Walk, PCT = findLongestWalk( withinRange=4, maxWalkLength=31, cyclesPerWalk=1000 )
+	nSteps = 4
+	L_Walk, PCT = findLongestWalk( withinRange=nSteps, maxWalkLength=31, cyclesPerWalk=1000 )
 
 	print( '\nLongest walk where you will be (on average) less' )
-	print( 'then N steps from the starting position = {} : {:.2%}'.format( L_Walk, PCT ) )
+	print( 'then {} steps from the starting position -> {} @{:.2%}'.format( nSteps, L_Walk, PCT ) )
